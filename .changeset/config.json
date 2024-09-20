@@ -5,6 +5,5 @@
   "fixed": [],
   "linked": [],
   "access": "public",
-  "updateInternalDependencies": "patch",
-  "ignore": ["@shaheer/docs"]
+  "updateInternalDependencies": "patch"
 }
