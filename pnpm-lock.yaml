@@ -106,6 +106,9 @@ importers:
       '@repo/typescript-config':
         specifier: workspace:*
         version: link:../typescript-config
+      '@shaheerkochai/ui-config':
+        specifier: workspace:*
+        version: link:../ui-config
       '@types/node':
         specifier: ^22.5.5
         version: 22.5.5
@@ -197,6 +200,9 @@ importers:
       '@repo/typescript-config':
         specifier: workspace:*
         version: link:../typescript-config
+      '@shaheerkochai/ui-config':
+        specifier: workspace:*
+        version: link:../ui-config
       '@types/node':
         specifier: ^22.5.5
         version: 22.5.5
@@ -238,6 +244,15 @@ importers:
         version: 3.9.1(@types/node@22.5.5)(rollup@4.17.2)(typescript@5.4.5)(vite@5.2.11(@types/node@22.5.5))
 
   packages/typescript-config: {}
+
+  packages/ui-config:
+    dependencies:
+      tailwindcss:
+        specifier: ^3.4.12
+        version: 3.4.12(ts-node@10.9.2(@types/node@22.5.5)(typescript@5.4.5))
+      tailwindcss-animate:
+        specifier: ^1.0.7
+        version: 1.0.7(tailwindcss@3.4.12(ts-node@10.9.2(@types/node@22.5.5)(typescript@5.4.5)))
 
 packages:
 
