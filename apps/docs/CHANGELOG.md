@@ -1,5 +1,13 @@
 # docs
 
+## 0.1.3
+
+### Patch Changes
+
+- Updated dependencies [3fd48b3]
+  - @shaheerkochai/button@0.5.0
+  - @shaheerkochai/input@0.2.0
+
 ## 0.1.2
 
 ### Patch Changes
