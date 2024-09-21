@@ -220,29 +220,6 @@ Default.args = {
         return `Generic story file created for ${(answers as { name: string }).name}`;
       },
 
-      // Run pnpm install && pnpm build
-      (answers) => {
-        const { execSync } = require("child_process");
-        const packagePath = path.resolve(
-          PROJECT_ROOT,
-          `packages/${(answers as { name: string }).name}`
-        );
-
-        console.log(
-          `Running pnpm install && pnpm build for ${(answers as { name: string }).name}`
-        );
-        try {
-          execSync("pnpm install && pnpm build", {
-            cwd: packagePath,
-            stdio: "inherit",
-          });
-          return `pnpm install && pnpm build completed successfully for ${(answers as { name: string }).name}`;
-        } catch (error) {
-          console.error("Error running pnpm install && pnpm build:", error);
-          return `Failed to run pnpm install && pnpm build for ${(answers as { name: string }).name}`;
-        }
-      },
-
       // Run pnpm clean && pnpm install && pnpm run dev at PROJECT_ROOT level
       () => {
         const { execSync } = require("child_process");
