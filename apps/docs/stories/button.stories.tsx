@@ -4,9 +4,23 @@ import { Button } from "@shaheerkochai/button";
 const meta: Meta<typeof Button> = {
   component: Button,
   argTypes: {
-    type: {
-      control: { type: "radio" },
-      options: ["button", "submit", "reset"],
+    variant: {
+      control: { type: "select" },
+      options: [
+        "default",
+        "destructive",
+        "outline",
+        "secondary",
+        "ghost",
+        "link",
+      ],
+    },
+    size: {
+      control: { type: "select" },
+      options: ["default", "sm", "lg", "icon"],
+    },
+    asChild: {
+      control: { type: "boolean" },
     },
   },
 };
@@ -15,32 +29,43 @@ export default meta;
 
 type Story = StoryObj<typeof Button>;
 
-/*
- *👇 Render functions are a framework specific feature to allow you control on how the component renders.
- * See https://storybook.js.org/docs/react/api/csf
- * to learn how to use render functions.
- */
 export const Primary: Story = {
-  render: (props) => (
-    <Button
-      {...props}
-      onClick={(): void => {
-        // eslint-disable-next-line no-alert -- alert for demo
-        alert("Hello from Turborepo!");
-      }}
-    >
-      Hello
-    </Button>
-  ),
-  name: "Button",
+  render: (args) => <Button {...args} />,
   args: {
-    children: "Hello",
-    type: "button",
-    style: {
-      color: "blue",
-      border: "1px solid gray",
-      padding: 10,
-      borderRadius: 10,
+    children: "Button",
+    variant: "default",
+    size: "default",
+    asChild: false,
+    onClick: () => {
+      // eslint-disable-next-line no-alert -- alert for demo
+      alert("It works!");
     },
+  },
+};
+
+export const Secondary: Story = {
+  render: (args) => <Button {...args} />,
+  args: {
+    ...Primary.args,
+    children: "Secondary",
+    variant: "secondary",
+  },
+};
+
+export const Large: Story = {
+  render: (args) => <Button {...args} />,
+  args: {
+    ...Primary.args,
+    children: "Large",
+    size: "lg",
+  },
+};
+
+export const Small: Story = {
+  render: (args) => <Button {...args} />,
+  args: {
+    ...Primary.args,
+    children: "Small",
+    size: "sm",
   },
 };
