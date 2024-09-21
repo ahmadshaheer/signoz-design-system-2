@@ -19,6 +19,10 @@ const meta: Meta<typeof Button> = {
       control: { type: "select" },
       options: ["default", "sm", "lg", "icon"],
     },
+    theme: {
+      control: { type: "select" },
+      options: ["light", "dark"],
+    },
     asChild: {
       control: { type: "boolean" },
     },
@@ -35,6 +39,7 @@ export const Primary: Story = {
     children: "Button",
     variant: "default",
     size: "default",
+    theme: "light",
     asChild: false,
     onClick: () => {
       // eslint-disable-next-line no-alert -- alert for demo
@@ -67,5 +72,14 @@ export const Small: Story = {
     ...Primary.args,
     children: "Small",
     size: "sm",
+  },
+};
+
+export const Dark: Story = {
+  render: (args) => <Button {...args} />,
+  args: {
+    ...Primary.args,
+    children: "Dark Theme",
+    theme: "dark",
   },
 };
