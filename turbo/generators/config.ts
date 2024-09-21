@@ -105,7 +105,7 @@ export default function generator(plop: PlopTypes.NodePlopAPI): void {
         packageJson.description = (
           answers as { description: string }
         ).description;
-        packageJson.version = "0.1.0";
+        packageJson.version = "0.0.0";
 
         // Update main, module, and types fields
         packageJson.main = `./dist/${(answers as { name: string }).name}.js`;
