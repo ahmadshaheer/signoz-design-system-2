@@ -1,5 +1,11 @@
 # @shaheerkochai/button
 
+## 0.4.0
+
+### Minor Changes
+
+- 1edd28e: Test version bump
+
 ## 0.3.0
 
 ### Minor Changes
