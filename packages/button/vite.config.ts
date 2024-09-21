@@ -3,6 +3,7 @@ import { defineConfig } from "vite";
 import dts from "vite-plugin-dts";
 import react from "@vitejs/plugin-react";
 import { resolve } from "path";
+import cssInjectedByJsPlugin from "vite-plugin-css-injected-by-js";
 
 export default defineConfig({
   build: {
@@ -20,7 +21,7 @@ export default defineConfig({
       },
     },
   },
-  plugins: [dts(), react()],
+  plugins: [dts(), react(), cssInjectedByJsPlugin()],
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),
