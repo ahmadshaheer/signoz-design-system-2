@@ -1,5 +1,11 @@
 # docs
 
+## 0.1.0
+
+### Minor Changes
+
+- 4ef0b1f: Update button story
+
 ## 0.0.3
 
 ### Patch Changes
