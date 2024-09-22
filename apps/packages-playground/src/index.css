@@ -11,6 +11,8 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  --bg-light: #ffffff;
+  --bg-dark: #1a1a1a;
 }
 
 a {
@@ -33,6 +35,16 @@ body {
 h1 {
   font-size: 3.2em;
   line-height: 1.1;
+}
+
+.app.light {
+  background-color: var(--bg-light);
+  color: black;
+}
+
+.app.dark {
+  background-color: var(--bg-dark);
+  color: white;
 }
 
 button {

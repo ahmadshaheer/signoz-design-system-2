@@ -7,13 +7,15 @@
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "clean": "rm -rf dist node_modules"
   },
   "dependencies": {
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "@shaheerkochai/core": "workspace:*",
-    "@shaheerkochai/button": "workspace:*"
+    "@shaheerkochai/button": "workspace:*",
+    "@shaheerkochai/design-tokens": "workspace:*"
   },
   "devDependencies": {
     "@eslint/js": "^9.9.0",
