@@ -1,6 +1,6 @@
-import { Color, ColorKeys } from "./Color";
-import { Spacing, SpacingKeys } from "./Spacing";
-import { Typography, TypographyKeys } from "./Typography";
+import { Color } from "./Color";
+import { Spacing } from "./Spacing";
+import { Typography } from "./Typography";
 
 export { Color, Spacing, Typography };
 
