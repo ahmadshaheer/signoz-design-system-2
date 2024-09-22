@@ -1,5 +1,19 @@
 # docs
 
+## 0.1.16
+
+### Patch Changes
+
+- Updated dependencies
+  - @shaheerkochai/input@2.0.0
+
+## 0.1.15
+
+### Patch Changes
+
+- Updated dependencies
+  - @shaheerkochai/input@1.0.0
+
 ## 0.1.14
 
 ### Patch Changes
