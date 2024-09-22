@@ -1,7 +1,11 @@
 {
   "name": "packages-playground",
   "private": true,
+<<<<<<< HEAD
   "version": "0.0.1",
+=======
+  "version": "0.0.0",
+>>>>>>> 23f2739 (add packages-playground)
   "type": "module",
   "scripts": {
     "dev": "vite",
