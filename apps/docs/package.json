@@ -1,6 +1,6 @@
 {
   "name": "docs",
-  "version": "0.1.3",
+  "version": "0.1.12",
   "type": "module",
   "private": true,
   "scripts": {
@@ -13,6 +13,7 @@
   "dependencies": {
     "@shaheerkochai/input": "workspace:*",
     "@shaheerkochai/button": "workspace:*",
+    "@shaheerkochai/ui-config": "workspace:*",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
