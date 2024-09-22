@@ -67,6 +67,7 @@ export default function generator(plop: PlopTypes.NodePlopAPI): void {
         // Remove CHANGELOG.md and src/button.tsx
         fs.removeSync(path.join(targetPath, "CHANGELOG.md"));
         fs.removeSync(path.join(targetPath, "src", "button.tsx"));
+        fs.removeSync(path.join(targetPath, "src", "button-variants.tsx"));
 
         console.log(`Copied button package to ${targetPath}`);
         return "Package directory created";
