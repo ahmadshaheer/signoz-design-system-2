@@ -26,6 +26,9 @@ importers:
       '@shaheerkochai/input':
         specifier: workspace:*
         version: link:../../packages/input
+      '@shaheerkochai/ui-config':
+        specifier: workspace:*
+        version: link:../../packages/ui-config
       react:
         specifier: ^18.2.0
         version: 18.3.1
