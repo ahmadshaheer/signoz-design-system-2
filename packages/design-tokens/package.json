@@ -1,6 +1,6 @@
 {
   "name": "@shaheerkochai/design-tokens",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "type": "module",
   "main": "./dist/design-tokens.js",
   "module": "./dist/design-tokens.js",
@@ -18,5 +18,8 @@
     "vite": "^5.0.0",
     "vite-plugin-dts": "^3.0.0",
     "typescript": "^5.3.3"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }
