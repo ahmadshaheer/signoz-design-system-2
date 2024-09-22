@@ -1,6 +1,6 @@
 {
   "name": "@shaheerkochai/button",
-  "version": "0.13.1",
+  "version": "0.13.2",
   "sideEffects": false,
   "license": "MIT",
   "type": "module",
@@ -25,6 +25,7 @@
   "devDependencies": {
     "@repo/eslint-config": "workspace:*",
     "@repo/typescript-config": "workspace:*",
+    "@shaheerkochai/ui-config": "workspace:*",
     "@types/node": "^22.5.5",
     "@types/react": "^18.2.61",
     "@types/react-dom": "^18.2.19",
@@ -33,12 +34,12 @@
     "eslint": "^8.57.0",
     "postcss": "^8.4.47",
     "react-dom": "^18.2.0",
+    "rollup-plugin-visualizer": "^5.12.0",
     "tailwindcss": "^3.4.12",
     "typescript": "^5.3.3",
     "vite": "^5.0.0",
     "vite-plugin-css-injected-by-js": "^3.5.1",
-    "vite-plugin-dts": "^3.0.0",
-    "@shaheerkochai/ui-config": "workspace:*"
+    "vite-plugin-dts": "^3.0.0"
   },
   "dependencies": {
     "@radix-ui/react-icons": "^1.3.0",

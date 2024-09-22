@@ -1,5 +1,11 @@
 # @shaheerkochai/button
 
+## 0.13.2
+
+### Patch Changes
+
+- optimize bundle size
+
 ## 0.13.1
 
 ### Patch Changes

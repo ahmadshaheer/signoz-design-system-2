@@ -1,5 +1,12 @@
 # docs
 
+## 0.1.14
+
+### Patch Changes
+
+- Updated dependencies
+  - @shaheerkochai/button@0.13.2
+
 ## 0.1.13
 
 ### Patch Changes
