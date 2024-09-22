@@ -31,27 +31,6 @@ export default function generator(plop: PlopTypes.NodePlopAPI): void {
       },
     ],
     actions: [
-      // Run pnpm install . in PROJECT_ROOT/turbo/generators
-      () => {
-        const { execSync } = require("child_process");
-        console.log("Running pnpm install . in PROJECT_ROOT/turbo/generators");
-        try {
-          execSync("pnpm install .", {
-            cwd: path.join(PROJECT_ROOT, "turbo", "generators"),
-            stdio: "inherit",
-          });
-          return "pnpm install . completed successfully in PROJECT_ROOT/turbo/generators";
-        } catch (error) {
-          console.error(
-            "Error running pnpm install . in PROJECT_ROOT/turbo/generators:",
-            error
-          );
-          throw new Error(
-            "Failed to run pnpm install . in PROJECT_ROOT/turbo/generators"
-          );
-        }
-      },
-
       // Copy the entire button package directory
       async (answers) => {
         const sourcePath = path.resolve(PROJECT_ROOT, "packages/button");
