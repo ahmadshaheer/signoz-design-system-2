@@ -11,6 +11,7 @@
     "lint": "eslint ./stories/*.stories.tsx --max-warnings 0"
   },
   "dependencies": {
+    "@shaheerkochai/input": "workspace:*",
     "@shaheerkochai/button": "workspace:*",
     "@shaheerkochai/ui-config": "workspace:*",
     "react": "^18.2.0",
