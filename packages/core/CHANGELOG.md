@@ -1,5 +1,11 @@
 # @shaheerkochai/core
 
+## 0.2.0
+
+### Minor Changes
+
+- 6f1c93e: Fix the failing build and remove rollup stats plugin
+
 ## 0.1.1
 
 ### Patch Changes
