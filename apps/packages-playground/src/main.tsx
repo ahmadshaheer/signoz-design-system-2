@@ -2,7 +2,7 @@ import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import App from "./App.tsx";
 import "./index.css";
-import { ThemeProvider, useTheme } from "@shaheerkochai/core";
+import { ThemeProvider, useTheme } from "@shaheerkochai/theme";
 
 function ThemedApp() {
   const { theme } = useTheme();

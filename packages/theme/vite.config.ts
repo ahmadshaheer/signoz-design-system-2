@@ -7,8 +7,8 @@ export default defineConfig({
   build: {
     lib: {
       entry: resolve(__dirname, "src/index.tsx"),
-      name: "core",
-      fileName: (format) => `core.${format}.js`,
+      name: "theme",
+      fileName: (format) => `theme.${format}.js`,
     },
     rollupOptions: {
       external: ["react", "react-dom"],

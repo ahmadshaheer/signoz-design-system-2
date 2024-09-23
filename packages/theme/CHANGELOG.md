@@ -1,4 +1,4 @@
-# @shaheerkochai/core
+# @shaheerkochai/theme
 
 ## 0.2.0
 
@@ -23,4 +23,4 @@
 
 ### Patch Changes
 
-- dab8059: add core package containing ThemeProvider, useTheme, and ThemeSwitcher
+- dab8059: add theme package containing ThemeProvider, useTheme, and ThemeSwitcher

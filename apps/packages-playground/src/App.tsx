@@ -1,5 +1,5 @@
 import "./App.css";
-import { ThemeSwitcher, useTheme } from "@shaheerkochai/core";
+import { ThemeSwitcher, useTheme } from "@shaheerkochai/theme";
 import { Button } from "@shaheerkochai/button";
 import { Typography } from "@shaheerkochai/design-tokens";
 import { Spacing } from "@shaheerkochai/design-tokens";

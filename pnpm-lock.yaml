@@ -29,9 +29,9 @@ importers:
       '@shaheerkochai/input':
         specifier: workspace:*
         version: link:../../packages/input
-      '@shaheerkochai/ui-config':
+      '@shaheerkochai/tailwind-config':
         specifier: workspace:*
-        version: link:../../packages/ui-config
+        version: link:../../packages/tailwind-config
       react:
         specifier: ^18.2.0
         version: 18.3.1
@@ -84,12 +84,12 @@ importers:
       '@shaheerkochai/button':
         specifier: workspace:*
         version: link:../../packages/button
-      '@shaheerkochai/core':
-        specifier: workspace:*
-        version: link:../../packages/core
       '@shaheerkochai/design-tokens':
         specifier: latest
         version: 0.1.3
+      '@shaheerkochai/theme':
+        specifier: workspace:*
+        version: link:../../packages/theme
       react:
         specifier: ^18.3.1
         version: 18.3.1
@@ -164,9 +164,9 @@ importers:
       '@repo/typescript-config':
         specifier: workspace:*
         version: link:../typescript-config
-      '@shaheerkochai/ui-config':
+      '@shaheerkochai/tailwind-config':
         specifier: workspace:*
-        version: link:../ui-config
+        version: link:../tailwind-config
       '@types/node':
         specifier: ^22.5.5
         version: 22.5.5
@@ -203,31 +203,6 @@ importers:
       vite-plugin-css-injected-by-js:
         specifier: ^3.5.1
         version: 3.5.1(vite@5.4.7(@types/node@22.5.5))
-      vite-plugin-dts:
-        specifier: ^4.2.1
-        version: 4.2.1(@types/node@22.5.5)(rollup@4.22.4)(typescript@5.6.2)(vite@5.4.7(@types/node@22.5.5))
-
-  packages/core:
-    dependencies:
-      '@shaheerkochai/design-tokens':
-        specifier: latest
-        version: 0.1.3
-      '@types/react':
-        specifier: ^18.3.8
-        version: 18.3.8
-      react:
-        specifier: ^18.2.0
-        version: 18.3.1
-    devDependencies:
-      '@vitejs/plugin-react':
-        specifier: ^4.3.1
-        version: 4.3.1(vite@5.4.7(@types/node@22.5.5))
-      react-dom:
-        specifier: ^18.2.0
-        version: 18.3.1(react@18.3.1)
-      vite:
-        specifier: ^5.4.7
-        version: 5.4.7(@types/node@22.5.5)
       vite-plugin-dts:
         specifier: ^4.2.1
         version: 4.2.1(@types/node@22.5.5)(rollup@4.22.4)(typescript@5.6.2)(vite@5.4.7(@types/node@22.5.5))
@@ -283,9 +258,9 @@ importers:
       '@repo/typescript-config':
         specifier: workspace:*
         version: link:../typescript-config
-      '@shaheerkochai/ui-config':
+      '@shaheerkochai/tailwind-config':
         specifier: workspace:*
-        version: link:../ui-config
+        version: link:../tailwind-config
       '@types/node':
         specifier: ^22.5.5
         version: 22.5.5
@@ -326,9 +301,7 @@ importers:
         specifier: ^4.2.1
         version: 4.2.1(@types/node@22.5.5)(rollup@4.22.4)(typescript@5.6.2)(vite@5.4.7(@types/node@22.5.5))
 
-  packages/typescript-config: {}
-
-  packages/ui-config:
+  packages/tailwind-config:
     dependencies:
       tailwindcss:
         specifier: ^3.4.12
@@ -336,6 +309,33 @@ importers:
       tailwindcss-animate:
         specifier: ^1.0.7
         version: 1.0.7(tailwindcss@3.4.12)
+
+  packages/theme:
+    dependencies:
+      '@shaheerkochai/design-tokens':
+        specifier: latest
+        version: 0.1.3
+      '@types/react':
+        specifier: ^18.3.8
+        version: 18.3.8
+      react:
+        specifier: ^18.2.0
+        version: 18.3.1
+    devDependencies:
+      '@vitejs/plugin-react':
+        specifier: ^4.3.1
+        version: 4.3.1(vite@5.4.7(@types/node@22.5.5))
+      react-dom:
+        specifier: ^18.2.0
+        version: 18.3.1(react@18.3.1)
+      vite:
+        specifier: ^5.4.7
+        version: 5.4.7(@types/node@22.5.5)
+      vite-plugin-dts:
+        specifier: ^4.2.1
+        version: 4.2.1(@types/node@22.5.5)(rollup@4.22.4)(typescript@5.6.2)(vite@5.4.7(@types/node@22.5.5))
+
+  packages/typescript-config: {}
 
 packages:
 

@@ -1,6 +1,6 @@
-# Core Package
+# theme Package
 
-This is the core package of our project. It provides essential theming functionality and components for managing the application's visual appearance.
+This is the theme package of our project. It provides essential theming functionality and components for managing the application's visual appearance.
 
 ## Features
 
