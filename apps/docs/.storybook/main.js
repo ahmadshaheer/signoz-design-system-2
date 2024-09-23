@@ -23,12 +23,7 @@ const config = {
       ...config,
       define: { "process.env": {} },
       resolve: {
-        alias: [
-          {
-            find: "button",
-            replacement: resolve(__dirname, "../../../packages/button/"),
-          },
-        ],
+        alias: [],
       },
     };
   },
