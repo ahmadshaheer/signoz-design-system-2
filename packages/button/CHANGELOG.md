@@ -34,7 +34,7 @@
 
 ### Minor Changes
 
-- get the style from "@shaheerkochai/ui-config/tailwind-styles.css"
+- get the style from "@shaheerkochai/tailwind-config/tailwind-styles.css"
 
 ## 0.12.0
 

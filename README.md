@@ -39,7 +39,7 @@ This guide explains how to use Signoz design system powered by Turborepo, React,
 
 - `@shaheerkochai/core`: Core React components
 - `@shaheerkochai/design-tokens`: Design tokens for the design system
-- `@shaheerkochai/ui-config`: UI configuration, including Tailwind CSS setup
+- `@shaheerkochai/tailwind-config`: UI configuration, including Tailwind CSS setup
 - `@shaheerkochai/button`: Button component
 - `@shaheerkochai/input`: Input component
 

@@ -1,4 +1,4 @@
-const sharedConfig = require("@shaheerkochai/ui-config/tailwind.config.js");
+const sharedConfig = require("@shaheerkochai/tailwind-config/tailwind.config.js");
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
