@@ -1,6 +1,6 @@
 {
   "name": "@shaheerkochai/button",
-  "version": "0.13.2",
+  "version": "0.14.0",
   "sideEffects": false,
   "license": "MIT",
   "type": "module",
