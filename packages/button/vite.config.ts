@@ -4,7 +4,6 @@ import dts from "vite-plugin-dts";
 import react from "@vitejs/plugin-react";
 import { resolve } from "path";
 import cssInjectedByJsPlugin from "vite-plugin-css-injected-by-js";
-import { visualizer } from "rollup-plugin-visualizer";
 
 export default defineConfig({
   build: {
@@ -23,7 +22,7 @@ export default defineConfig({
       treeshake: true,
     },
   },
-  plugins: [dts(), react(), cssInjectedByJsPlugin(), visualizer()],
+  plugins: [dts(), react(), cssInjectedByJsPlugin()],
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),
