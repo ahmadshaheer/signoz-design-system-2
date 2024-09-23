@@ -22,7 +22,6 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
         className={buttonVariants({ variant, size, theme, className })}
         ref={ref}
         {...props}
-        // Test
       />
     );
   }
