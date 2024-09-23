@@ -12,9 +12,9 @@
     "dev": "vite build --watch"
   },
   "dependencies": {
-    "react": "^18.2.0",
+    "@shaheerkochai/design-tokens": "latest",
     "@types/react": "^18.3.8",
-    "@shaheerkochai/design-tokens": "workspace:*"
+    "react": "^18.2.0"
   },
   "devDependencies": {
     "@vitejs/plugin-react": "^4.3.1",

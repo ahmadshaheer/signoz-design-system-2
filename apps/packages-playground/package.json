@@ -11,11 +11,11 @@
     "clean": "rm -rf dist node_modules"
   },
   "dependencies": {
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1",
-    "@shaheerkochai/core": "workspace:*",
     "@shaheerkochai/button": "workspace:*",
-    "@shaheerkochai/design-tokens": "workspace:*"
+    "@shaheerkochai/core": "workspace:*",
+    "@shaheerkochai/design-tokens": "latest",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
   },
   "devDependencies": {
     "@eslint/js": "^9.9.0",
