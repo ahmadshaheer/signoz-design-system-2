@@ -1,5 +1,12 @@
 # docs
 
+## 0.1.18
+
+### Patch Changes
+
+- Updated dependencies
+  - @shaheerkochai/button@0.15.0
+
 ## 0.1.17
 
 ### Patch Changes

@@ -1,5 +1,12 @@
 # packages-playground
 
+## 0.0.5
+
+### Patch Changes
+
+- Updated dependencies
+  - @shaheerkochai/button@0.15.0
+
 ## 0.0.4
 
 ### Patch Changes
