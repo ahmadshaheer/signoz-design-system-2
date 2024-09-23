@@ -1,192 +1,142 @@
-# Turborepo Design System Starter
+# Signoz Design System
 
-This guide explains how to use a React design system starter powered by:
+This guide explains how to use Signoz design system powered by Turborepo, React, and Storybook.
 
-- 🏎 [Turborepo](https://turbo.build/repo) — High-performance build system for Monorepos
-- 🚀 [React](https://reactjs.org/) — JavaScript library for user interfaces
-- 🛠 [Tsup](https://github.com/egoist/tsup) — TypeScript bundler powered by esbuild
-- 📖 [Storybook](https://storybook.js.org/) — UI component environment powered by Vite
+## Getting Started
 
-As well as a few others tools preconfigured:
+1. Clone the repository:
 
-- [TypeScript](https://www.typescriptlang.org/) for static type checking
-- [ESLint](https://eslint.org/) for code linting
-- [Prettier](https://prettier.io) for code formatting
-- [Changesets](https://github.com/changesets/changesets) for managing versioning and changelogs
-- [GitHub Actions](https://github.com/changesets/action) for fully automated package publishing
+   ```sh
+   git clone git@github.com:ahmadshaheer/signoz-design-system-2.git
+   ```
 
-## Using this example
+2. Install dependencies:
 
-Run the following command:
+   ```sh
+   pnpm install
+   ```
 
-```sh
-npx create-turbo@latest -e design-system
-```
+3. Build the packages:
 
-### Useful Commands
+   ```sh
+   pnpm build
+   ```
+
+4. Start Storybook:
+   ```sh
+   pnpm run dev
+   ```
+
+## Useful Commands
 
 - `pnpm build` - Build all packages, including the Storybook site
 - `pnpm dev` - Run all packages locally and preview with Storybook
 - `pnpm lint` - Lint all packages
 - `pnpm changeset` - Generate a changeset
-- `pnpm clean` - Clean up all `node_modules` and `dist` folders (runs each package's clean script)
+- `pnpm clean` - Clean up all `node_modules` and `dist` folders
 
-## Turborepo
+## Available Packages
 
-[Turborepo](https://turbo.build/repo) is a high-performance build system for JavaScript and TypeScript codebases. It was designed after the workflows used by massive software engineering organizations to ship code at scale. Turborepo abstracts the complex configuration needed for monorepos and provides fast, incremental builds with zero-configuration remote caching.
+- `@shaheerkochai/core`: Core React components
+- `@shaheerkochai/design-tokens`: Design tokens for the design system
+- `@shaheerkochai/ui-config`: UI configuration, including Tailwind CSS setup
+- `@shaheerkochai/button`: Button component
+- `@shaheerkochai/input`: Input component
 
-Using Turborepo simplifies managing your design system monorepo, as you can have a single lint, build, test, and release process for all packages. [Learn more](https://vercel.com/blog/monorepos-are-changing-how-teams-build-software) about how monorepos improve your development workflow.
+## Creating a New Package
 
-## Apps & Packages
+To create a new package:
 
-This Turborepo includes the following packages and applications:
+1. Create a new branch:
 
-- `apps/docs`: Component documentation site with Storybook
-- `packages/button`: Core React components
-- `packages/utils`: Shared React utilities
-- `packages/typescript-config`: Shared `tsconfig.json`s used throughout the Turborepo
-- `packages/eslint-config`: ESLint preset
+   ```sh
+   git checkout -b feature/new-package-name
+   ```
 
-Each package and app is 100% [TypeScript](https://www.typescriptlang.org/). Workspaces enables us to "hoist" dependencies that are shared between packages to the root `package.json`. This means smaller `node_modules` folders and a better local dev experience. To install a dependency for the entire monorepo, use the `-w` workspaces flag with `pnpm add`.
+2. From the root of the project, run:
 
-This example sets up your `.gitignore` to exclude all generated files, other folders like `node_modules` used to store your dependencies.
+   ```sh
+   pnpm turbo gen new-package
+   ```
 
-### Compilation
+   When creating a new package, you'll be prompted to provide a name and description for it. Enter these details as requested. For example:
 
-To make the core library code work across all browsers, we need to compile the raw TypeScript and React code to plain JavaScript. We can accomplish this with `tsup`, which uses `esbuild` to greatly improve performance.
+   - Package name: Enter a name that corresponds to a shadcn component (e.g., "dropdown-menu")
+   - Description: Provide a brief explanation of the package's purpose
 
-Running `pnpm build` from the root of the Turborepo will run the `build` command defined in each package's `package.json` file. Turborepo runs each `build` in parallel and caches & hashes the output to speed up future builds.
+   e.g.
 
-For `acme-core`, the `build` command is the following:
+   ```sh
+   ❯ pnpm turbo gen new-package
+   turbo 2.1.2
 
-```bash
-tsup src/index.tsx --format esm,cjs --dts --external react
-```
 
-`tsup` compiles `src/index.tsx`, which exports all of the components in the design system, into both ES Modules and CommonJS formats as well as their TypeScript types. The `package.json` for `acme-core` then instructs the consumer to select the correct format:
+   >>> Modify "design-system" using custom generators
 
-```json:acme-core/package.json
-{
-  "name": "@shaheerkochai/core",
-  "version": "0.0.0",
-  "main": "./dist/index.js",
-  "module": "./dist/index.mjs",
-  "types": "./dist/index.d.ts",
-  "sideEffects": false,
-}
-```
+   ? What is the name of the new package? dropdown-menu
+   ? Provide a brief description of the package: dropdown menu package
+   ```
 
-Run `pnpm build` to confirm compilation is working correctly. You should see a folder `acme-core/dist` which contains the compiled output.
+   Executing this generator will automatically set up and configure the new package with the necessary files and structure.
 
-```bash
-acme-core
-└── dist
-    ├── index.d.ts  <-- Types
-    ├── index.js    <-- CommonJS version
-    └── index.mjs   <-- ES Modules version
-```
+   ```
+   ├── apps
+   │   └── docs
+   │       ├── package.json (modified)
+   │       └── stories
+   │           └── dropdown-menu.stories.tsx (new)
+   ├── packages
+   │   └── dropdown-menu
+   │       ├── .eslintrc.js (new)
+   │       ├── components.json (new)
+   │       ├── package.json (new)
+   │       ├── postcss.config.js (new)
+   │       ├── src
+   │       │   ├── dropdown-menu.tsx (new)
+   │       │   ├── index.css (new)
+   │       │   └── lib
+   │       │       └── utils.ts (new)
+   │       ├── tailwind.config.js (new)
+   │       ├── tsconfig.app.json (new)
+   │       ├── tsconfig.json (new)
+   │       └── vite.config.ts (new)
+   ```
 
-## Components
+3. Make the necessary changes:
 
-Each file inside of `acme-core/src` is a component inside our design system. For example:
+   - Modify the component (e.g. `packages/dropdown-menu/src/dropdown-menu.tsx`)
+   - Add a storybook story in `apps/docs/stories/dropdown-menu.stories.tsx`
 
-```tsx:acme-core/src/Button.tsx
-import * as React from 'react';
+4. From the root of the project, commit the changes to the new branch:
 
-export interface ButtonProps {
-  children: React.ReactNode;
-}
+   ```sh
+   git add .
+   git commit -m "Add new package: dropdown-menu"
+   ```
 
-export function Button(props: ButtonProps) {
-  return <button>{props.children}</button>;
-}
+5. From the root of the project, run:
 
-Button.displayName = 'Button';
-```
+   ```sh
+   pnpm changeset
+   ```
 
-When adding a new file, ensure the component is also exported from the entry `index.tsx` file:
+   This will guide you through the process of creating a changeset, which is used to document changes and manage version bumps.
 
-```tsx:acme-core/src/index.tsx
-import * as React from "react";
-export { Button, type ButtonProps } from "./Button";
-// Add new component exports here
-```
+   #### It will prompt you with the following:
 
-## Storybook
+   - Which packages would you like to include? – This shows which packages and changed and which have remained the same. By default, no packages are included. Press space to select the packages you want to include in the changeset.
+   - Which packages should have a major bump? – Press space to select the packages you want to bump versions for.
+   - If doing the first major version, confirm you want to release.
+   - Write a summary for the changes.
+   - Confirm the changeset looks as expected.
+   - A new Markdown file will be created in the changeset folder with the summary and a list of the packages included.
 
-Storybook provides us with an interactive UI playground for our components. This allows us to preview our components in the browser and instantly see changes when developing locally. This example preconfigures Storybook to:
+6. Push the changes to the remote repository:
 
-- Use Vite to bundle stories instantly (in milliseconds)
-- Automatically find any stories inside the `stories/` folder
-- Support using module path aliases like `@shaheerkochai-core` for imports
-- Write MDX for component documentation pages
+   ```sh
+   git push origin feature/new-package-name
+   ```
 
-For example, here's the included Story for our `Button` component:
-
-```js:apps/docs/stories/button.stories.mdx
-import { Button } from '@shaheerkochai-core/src';
-import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
-
-<Meta title="Components/Button" component={Button} />
-
-# Button
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec euismod, nisl eget consectetur tempor, nisl nunc egestas nisi, euismod aliquam nisl nunc euismod.
-
-## Props
-
-<Props of={Box} />
-
-## Examples
-
-<Preview>
-  <Story name="Default">
-    <Button>Hello</Button>
-  </Story>
-</Preview>
-```
-
-This example includes a few helpful Storybook scripts:
-
-- `pnpm dev`: Starts Storybook in dev mode with hot reloading at `localhost:6006`
-- `pnpm build`: Builds the Storybook UI and generates the static HTML files
-- `pnpm preview-storybook`: Starts a local server to view the generated Storybook UI
-
-## Versioning & Publishing Packages
-
-This example uses [Changesets](https://github.com/changesets/changesets) to manage versions, create changelogs, and publish to npm. It's preconfigured so you can start publishing packages immediately.
-
-You'll need to create an `NPM_TOKEN` and `GITHUB_TOKEN` and add it to your GitHub repository settings to enable access to npm. It's also worth installing the [Changesets bot](https://github.com/apps/changeset-bot) on your repository.
-
-### Generating the Changelog
-
-To generate your changelog, run `pnpm changeset` locally:
-
-1. **Which packages would you like to include?** – This shows which packages and changed and which have remained the same. By default, no packages are included. Press `space` to select the packages you want to include in the `changeset`.
-1. **Which packages should have a major bump?** – Press `space` to select the packages you want to bump versions for.
-1. If doing the first major version, confirm you want to release.
-1. Write a summary for the changes.
-1. Confirm the changeset looks as expected.
-1. A new Markdown file will be created in the `changeset` folder with the summary and a list of the packages included.
-
-### Releasing
-
-When you push your code to GitHub, the [GitHub Action](https://github.com/changesets/action) will run the `release` script defined in the root `package.json`:
-
-```bash
-turbo run build --filter=docs^... && changeset publish
-```
-
-Turborepo runs the `build` script for all publishable packages (excluding docs) and publishes the packages to npm. By default, this example includes `acme` as the npm organization. To change this, do the following:
-
-- Rename folders in `packages/*` to replace `acme` with your desired scope
-- Search and replace `acme` with your desired scope
-- Re-run `pnpm install`
-
-To publish packages to a private npm organization scope, **remove** the following from each of the `package.json`'s
-
-```diff
-- "publishConfig": {
--  "access": "public"
-- },
-```
+7. Create a new PR (the changeset bot will notify if the Changeset was detected or not)
+8. After the PR gets merged, the pipeline is going to update the bumped versions in package.json of the changed packages and also create a new PR (Version Packages)
+9. after this newly created PR gets merged, the selected packages (that were specified in step 5) will be released/updated to npmjs.com
